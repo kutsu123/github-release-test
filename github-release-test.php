@@ -10,7 +10,12 @@
  * @package github-release-test
  */
 
-define( 'TEST_BASENAME', plugin_basename( __FILE__ ) );    // このプラグインのベースネーム
+define( 'TEST_HOGE_BASENAME', plugin_basename( __FILE__ ) );    // このプラグインのベースネーム
+define( 'TEST_HOGE_AUTO_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
+define( 'TEST_HOGE_AUTO_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+
+//コンポーザーの読み込み
+require_once TEST_HOGE_AUTO_PATH . '/vendor/autoload.php';
 
 // 自動アップデート.
-require_once plugin_dir_path( __FILE__ ) . 'inc/auto-update.php';
+require_once TEST_HOGE_AUTO_PATH . '/inc/auto-update.php';
