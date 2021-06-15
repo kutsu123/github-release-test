@@ -40,6 +40,12 @@ jobs:
       - name: scss build
         run: yarn gulp sass
 
+      #composerの実施
+      - name: Composer install
+        uses: docker://composer:1.9.1
+        with:
+          args: install
+
       # release作成
       - name: Create Release
         id: create_release
