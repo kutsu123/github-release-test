@@ -15,12 +15,11 @@ github-actionsのテストです。
 ### 開発の１例
 1. devからfeature/hogehogeブランチを切る
 2. feature/hogehogeブランチにて開発作業
-3. devへのPR
-4. devへPRがマージされた時点でrelease-xxxxxというPRが自動生成される
+3. devへのPRを出す（手動）
+4. devへPRがマージされた時点で `release 候補 - {日付}` というPRが自動生成される
 5. release PRをmainにマージすると自動的にリリース処理が走る
 	- PRタイトルをタグ追加する
 	- PR内容をリリースノートとして追加する
 	- リリースにzipを追加
-
-## その他
-準備中
+	- devブランチにPRが自動生成される
+6. `リリース残処理：mainの内容をdevへ反映` のPRをマージしdevを最新の状態にする
