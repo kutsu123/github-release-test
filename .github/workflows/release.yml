@@ -2,11 +2,12 @@ name: Create Release
 
 on:
   pull_request:
-    types: [labeled]
+    types: [closed]
+    branches:
+      - main
 
 jobs:
-  create-release:
-    if: github.event.label.name == 'release'
+  build:
     runs-on: ubuntu-latest
     #nodeのバージョン設定 参考 https://docs.github.com/ja/free-pro-team@latest/actions/guides/building-and-testing-nodejs
     strategy:
@@ -60,18 +61,11 @@ jobs:
           asset_name: release-test.zip
           asset_content_type: application/zip
 
-      # main から dev へオートマージ
-      - name: Extract branch name
-        uses: mdecoleman/pr-branch-name@1.0.0
-        id: extract_branch
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: yanamura/git-flow-merge-action@v1
-        name: git-flow merge
+      # mainからdevにPR生成
+      - name: create-pull-request
+        uses: repo-sync/pull-request@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ steps.extract_branch.outputs.branch }}
-          # git-flowにおけるdevelopブランチの、あなたのリポジトリーにおける名称
-          develop_branch: "dev"
-          # git-flowにおけるmasterブランチの、あなたのリポジトリーにおける名称
-          main_branch: "main"
+          destination_branch: 'dev'
+          pr_title: "mainの内容をdevへ反映"
+          pr_body: "Pulling main into dev"
