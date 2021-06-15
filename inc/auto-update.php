@@ -35,7 +35,7 @@ class testAutoUpdate {
 	public function _activate_autoupdate() {
 		new Updater(
 			TEST_BASENAME,
-			'm-g-n',
+			'kutsu123',
 			'github-release-test'
 		);
 	}
