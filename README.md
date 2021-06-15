@@ -1,3 +1,5 @@
+![release](https://github.com/m-g-n/ruijinen-plugin_block-patterns/workflows/Create+Release/badge.svg)
+
 # github-release-test
 github-actionsのテストです。
 リリースまで進行しやすいようにgithub actionsを設定していくためのテスト領域です

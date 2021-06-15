@@ -34,9 +34,9 @@ class testAutoUpdate {
 	 */
 	public function _activate_autoupdate() {
 		new Updater(
-			RJE_BP_PLUGIN_BASENAME,
+			TEST_BASENAME,
 			'm-g-n',
-			'ruijinen-block-patterns'
+			'github-release-test'
 		);
 	}
 }
