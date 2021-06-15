@@ -2,7 +2,7 @@
 /**
  * Plugin name: github actionsテスト
  * Description: github actionsの動作確認プラグインです
- * Version: 0.0.0.10
+ * Version: 0.0.0.11
  * Author: mgn Inc.,
  * Author URI: https://rui-jin-en.com/
  * License: GPL-2.0+
