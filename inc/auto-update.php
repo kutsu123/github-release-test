@@ -7,6 +7,8 @@
  * @package ruijinen
  */
 
+namespace Kutsu\Plugin\AutoUpdate;
+
 use Inc2734\WP_GitHub_Plugin_Updater\Bootstrap as Updater;
 
 /**
@@ -34,7 +36,7 @@ class testAutoUpdate {
 	 */
 	public function _activate_autoupdate() {
 		new Updater(
-			TEST_BASENAME,
+			TEST_HOGE_BASENAME,
 			'kutsu123',
 			'github-release-test'
 		);
