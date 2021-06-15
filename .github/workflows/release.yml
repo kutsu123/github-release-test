@@ -9,9 +9,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    #nodeのバージョン設定 参考 https://docs.github.com/ja/free-pro-team@latest/actions/guides/building-and-testing-nodejs
+    strategy:
+      matrix:
+        node-version: [13.x] 
+
     steps:
       - name: Checkout code
         uses: actions/checkout@master
+
+      #yarnでのscriptの実施
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: yarn gulp sass
 
       # release作成
       - name: Create Release
