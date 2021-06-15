@@ -10,5 +10,7 @@
  * @package github-release-test
  */
 
+define( 'TEST_BASENAME', plugin_basename( __FILE__ ) );    // このプラグインのベースネーム
+
 // 自動アップデート.
 require_once plugin_dir_path( __FILE__ ) . 'inc/auto-update.php';
