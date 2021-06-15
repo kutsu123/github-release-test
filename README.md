@@ -1,4 +1,4 @@
-![release](https://github.com/m-g-n/ruijinen-plugin_block-patterns/workflows/Create+Release/badge.svg)
+[![Create Release](https://github.com/kutsu123/github-release-test/actions/workflows/release.yml/badge.svg?branch=dev)](https://github.com/kutsu123/github-release-test/actions/workflows/release.yml)
 
 # github-release-test
 github-actionsのテストです。
