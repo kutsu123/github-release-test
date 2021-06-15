@@ -81,5 +81,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           destination_branch: 'dev'
-          pr_title: "mainの内容をdevへ反映"
+          pr_title: "リリース残処理：mainの内容をdevへ反映"
           pr_body: "Pulling main into dev"
+          pr_allow_empty: true
