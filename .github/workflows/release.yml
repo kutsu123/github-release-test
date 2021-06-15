@@ -60,3 +60,12 @@ jobs:
           asset_path: ./release-test.zip
           asset_name: release-test.zip
           asset_content_type: application/zip
+
+      # mainからdevにPR生成
+      - name: create-pull-request
+        uses: repo-sync/pull-request@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_branch: 'dev'
+          pr_title: "mainの内容をdevへ反映 ${{ github.ref }}"
+          pr_body: "Pulling ${{ github.ref }} into dev"
