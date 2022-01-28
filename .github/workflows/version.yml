@@ -11,10 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: get version
-        id: version
-        uses: notiz-dev/github-action-json-property@release
-        with: 
-            path: 'version.json'
-            prop_path: 'version'
-      - run: echo ${{steps.version.outputs.prop}}
+      - name: Get version
+        uses: technote-space/get-next-version-action@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo ${{ NEXT_VERSION }}
