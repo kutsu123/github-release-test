@@ -3,7 +3,7 @@ name: get_version
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   hello:
