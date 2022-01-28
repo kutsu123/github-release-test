@@ -21,3 +21,7 @@ jobs:
           SOURCE_NAME: ${{ steps.branch_name.outputs.SOURCE_NAME }}
           SOURCE_BRANCH: ${{ steps.branch_name.outputs.SOURCE_BRANCH }}
           SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
+      - name: release
+        id: release-no
+        run: |
+          echo "relase_NO=${{ GITHUB_RUN_NUMBER }}"
