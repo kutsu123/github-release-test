@@ -1,0 +1,20 @@
+name: get_version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello:
+    name: HelloWorld sample
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get version
+          id: version
+          uses: notiz-dev/github-action-json-property@release
+          with: 
+              path: 'package.json'
+              prop_path: 'hoge'
+      - run: echo ${{steps.version.outputs.prop}} 
