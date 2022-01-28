@@ -6,22 +6,10 @@ jobs:
   tag_get_test:
     runs-on: ubuntu-latest
     steps:
-      - name: Branch name
-        id: branch_name
-        run: |
-          echo ::set-output name=SOURCE_NAME::${GITHUB_REF#refs/*/}
-          echo ::set-output name=SOURCE_BRANCH::${GITHUB_REF#refs/heads/}
-          echo ::set-output name=SOURCE_TAG::${GITHUB_REF#refs/tags/}
-      - name: Build base image
-        run: |
-          echo $SOURCE_NAME
-          echo $SOURCE_BRANCH
-          echo $SOURCE_TAG
-        env:
-          SOURCE_NAME: ${{ steps.branch_name.outputs.SOURCE_NAME }}
-          SOURCE_BRANCH: ${{ steps.branch_name.outputs.SOURCE_BRANCH }}
-          SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
-      - name: release
-        id: release-no
-        run: |
-          echo "relase_NO=${{ github.run_number }}"
+    - name: Create local changes
+      run: |
+        CURRENT_VERSION=$(echo $GITHUB_REF | sed 's/refs\/tags\///')
+        echo "CURRENT_VERSION = $CURRENT_VERSION"
+        NEXT_VERSION=$(echo $CURRENT_VERSION | perl -ne 'if ($_ =~ /^(\d+)\.(\d+)\.\d+$/) { $v = $2; $v++; print "$1.$v.0\n" } else { print "Invalid tag format."; exit 1 }')
+        echo "NEXT_VERSION = $NEXT_VERSION"
+        echo "::set-env name=NEXT_VERSION::$(echo $NEXT_VERSION)"
