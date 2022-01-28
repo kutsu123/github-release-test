@@ -24,4 +24,4 @@ jobs:
       - name: release
         id: release-no
         run: |
-          echo "relase_NO=${{ GITHUB_RUN_NUMBER }}"
+          echo "relase_NO=${{ github.run_number }}"
