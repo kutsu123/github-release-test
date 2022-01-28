@@ -12,7 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - uses: bbonkr/get-version-action@v1.0.1
         id: get_version
         with:
