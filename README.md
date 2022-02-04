@@ -36,6 +36,7 @@ github-actionsのテストです。
 6. `リリース残処理：mainの内容をdevへ反映` のPRをマージしdevを最新の状態にする
 
 ## Changelog
+v0.0.0.18 pr-release修正
 v0.0.0.17 pr-release修正
 v0.0.0.16 pr-release修正
 v0.0.0.15 アップデートテスト
