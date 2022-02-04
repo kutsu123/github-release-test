@@ -1,4 +1,4 @@
-<%= ENV['PKG_VERSION'] %>
+<%= ENV['NPM_VERSION'] %>
 
 ### 変更内容
 <% pull_requests.each do |pr| -%>
