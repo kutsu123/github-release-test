@@ -36,6 +36,7 @@ github-actionsのテストです。
 6. `リリース残処理：mainの内容をdevへ反映` のPRをマージしdevを最新の状態にする
 
 ## Changelog
+v0.0.2 新しいtagpr Actionのテスト
 v0.0.1 新しいtagpr Actionのテスト
 v0.0.0.21 新しいtagpr Actionのテスト
 v0.0.0.20 新しいtagpr Actionのテスト
