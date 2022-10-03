@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.3](https://github.com/kutsu123/github-release-test/compare/v0.0.2...0.0.3) - 2022-10-03
+- tagprのconfigを調整 by @kutsu123 in https://github.com/kutsu123/github-release-test/pull/79
+
 ## [v0.0.2](https://github.com/kutsu123/github-release-test/compare/v0.0.1...v0.0.2) - 2022-10-03
 - バージョン番号の変更 by @kutsu123 in https://github.com/kutsu123/github-release-test/pull/76
 - test-v0.0.2 by @kutsu123 in https://github.com/kutsu123/github-release-test/pull/77
