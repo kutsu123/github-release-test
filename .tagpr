@@ -30,6 +30,6 @@
 #       GitHub Release creation behavior after tagging [true, draft, false]
 #       If this value is not set, the release is to be created.
 [tagpr]
-	vPrefix = true
+	vPrefix = false
 	releaseBranch = main
 	versionFile = version.json
